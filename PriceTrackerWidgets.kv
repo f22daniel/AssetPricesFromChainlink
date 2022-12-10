@@ -1,0 +1,237 @@
+
+<SettingsButton>
+    settings_image: settings_image
+    id: settings_button
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+    col: (51/255, 51/255, 1, 1)
+    canvas.before:
+        Color:
+            rgba: self.col
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [16]
+    Image:
+        id: settings_image
+        source: "gear.png"
+        size: self.parent.size
+        pos: self.parent.pos
+        keep_ratio: True
+        allow_stretch: True
+        # Animation adjustment
+        anim_delay: 0
+        rot_angle: 0
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: self.rot_angle
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+<CloseButton>
+    close_image: close_image
+    id: settings_button
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+    col: (51/255, 51/255, 1, 1)
+    canvas.before:
+        Color:
+            rgba: self.col
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [16]
+    FloatLayout:
+        size: self.parent.size
+        pos: self.parent.pos
+        Image:
+            id: close_image
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            source: "close_button.png"
+            keep_ratio: True
+            allow_stretch: True
+            # Animation adjustment
+            anim_delay: 0
+            rot_angle: 0
+            canvas.before:
+                PushMatrix
+                Rotate:
+                    angle: self.rot_angle
+                    origin: self.center
+            canvas.after:
+                PopMatrix
+
+<UpdateButton>
+    update_image: update_image
+    id: settings_button
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+    col: (51/255, 51/255, 1, 1)
+    canvas.before:
+        Color:
+            rgba: self.col
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [16]
+    Image:
+        id: update_image
+        source: "refresh_button.png"
+        size: self.parent.size
+        pos: self.parent.pos
+        keep_ratio: True
+        allow_stretch: True
+        # Animation adjustment
+        anim_delay: 0
+        rot_angle: 0
+        canvas.before:
+            PushMatrix
+            Rotate:
+                angle: self.rot_angle
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+<StandardLabel@Label>
+    font_size: 20
+    bold: True
+    markup: True
+    canvas.before:
+        Color:
+            rgba: (1/2, 1/2, 1, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+<SeparateLabel@Label>
+    canvas.before:
+        Color:
+            rgba: (0, 0, 0, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<DescriptionLabel@Label>
+    bold: True
+    markup: True
+    font_size: 16
+    canvas.before:
+        Color:
+            rgba: (1/2, 1/2, 1, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+<PairDescription@Label>
+    bold: True
+    markup: true
+    font_size: 14
+    size_hint: .5, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (0, 45/255, 179/255, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+<ValueDecription@PairDescription>
+    size_hint: 1, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (0, 51/255, 204/255, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+<UpdatedDecription@PairDescription>
+    size_hint: 1, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (0, 57/255, 230/255, 1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            radius: [10]
+
+<StandardTextInput>
+    font_size: 12
+    multiline: False
+
+<StandardButton>
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+    col: (51/255, 51/255, 1, 1)
+    bold: True
+    markup: True
+    canvas.before:
+        Color:
+            rgba: self.col
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [12]
+
+<StandardToggle>
+    background_normal: ""
+    background_color: (0, 0, 0, 0)
+    col: (0, 153/255, 153/255, 1)
+    bold: True
+    markup: True
+    canvas.before:
+        Color:
+            rgba: self.col
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [12]
+
+<PairLabel>
+    bold: True
+    markup: True
+    font_size: 14
+    size_hint: .7, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (0, 0, 204/255, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [8]
+
+<PriceLabel>
+    bold: True
+    markup: True
+    font_size: 14
+    size_hint: 1, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (0, 0, 1, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [8]
+
+<TimeLabel>
+    bold: True
+    markup: True
+    font_size: 14
+    size_hint: 1, None
+    height: 30
+    canvas.before:
+        Color:
+            rgba: (51/255, 51/255, 1, 1)
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [8]
